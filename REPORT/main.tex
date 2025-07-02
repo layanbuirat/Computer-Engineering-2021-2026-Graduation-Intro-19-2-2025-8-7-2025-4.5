@@ -1,0 +1,86 @@
+\documentclass[12pt, a4paper]{article} % Add '12pt' 
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage[a4paper, margin=1in]{geometry}
+\usepackage{newtxtext,newtxmath} % Times-like font for pdflatex
+
+\begin{document}
+
+\begin{titlepage}
+    \centering
+    
+    % University logo - adjusted width and spacing
+    \includegraphics[width=0.5\textwidth]{logo.png} % Reduced from 0.7 to 0.5 for better proportion
+    \vspace{1cm}
+    
+    % University name - consistent font sizing
+    {\LARGE \textbf{BIRZEIT UNIVERSITY}}
+    \vspace{2cm}
+    
+    % Title - fixed minipage width and spacing
+    \begin{minipage}{\textwidth} % Changed from 1.2 to normal textwidth
+        \centering
+        {\Huge \textbf{AI-Powered Meal Recognition \\ \& Recipe Assistant}}
+    \end{minipage}
+    
+    \vspace{1.5cm}
+    
+    % Authors section - improved alignment
+    {\Large \textbf{BY}} \\
+    \vspace{0.5cm}
+    {\Large Rana Musa  (1210007)} \\ % Added \hfill for better alignment
+    {\Large Leyan Burait  (1211439)} \\
+    {\Large Haneen Odeh (1210716)}
+    
+    \vspace{1 cm}
+    
+    % Supervisor section - consistent spacing
+    {\Large \textbf{SUPERVISED BY}} \\
+    \vspace{0.5cm}
+    {\Large Dr. Yazan Abu Farha}
+    
+    \vspace{2cm}
+    
+    % Department information - improved formatting
+    {\large A Graduation Project Report Presented to the} \\
+    \vspace{0.3cm}
+    {\large \textbf{DEPARTMENT OF ELECTRICAL AND COMPUTER ENGINEERING}} \\
+    {\large \textbf{FACULTY OF ENGINEERING AND TECHNOLOGY}} \\
+    \vspace{0.5cm}
+    {\large In Partial Fulfillment of the Requirements for the Degree of} \\
+    \vspace{0.3cm}
+    {\large \textbf{BACHELOR OF SCIENCE IN COMPUTER ENGINEERING}}
+    
+    \vspace{1.5cm}
+    
+    % Location and date - consistent formatting
+    {\large \textbf{BIRZEIT UNIVERSITY}} \\
+    {\large Birzeit, West Bank, Palestine} \\
+    \vspace{0.5cm}
+    {\large \textbf{July 2025}}
+    
+\end{titlepage}
+
+% ============== CHAPTER 1: INTRODUCTION ==============
+\section*{Chapter 1}
+\subsection*{Introduction}
+
+Food is an essential part of our daily lives, but for many people, cooking meals can be challenging. With busy schedules, limited cooking skills, or a lack of meal-planning experience, many individuals find it difficult to prepare nutritious meals at home. Often, people waste food because they do not know how to use the ingredients they already have. Technology has changed many aspects of life, and now, artificial intelligence (AI) is making cooking easier too. AI-powered food recognition helps users identify ingredients and find suitable recipes using their available food items. This project introduces a smart system that detects food ingredients from images and suggests meal ideas based on them [1].\vspace{1 cm}
+
+Traditional machine learning algorithms [22] is the standard method for food category recognition before the 2010s and the rise of deep learning and large image datasets. Common methods we surveyed include support vector machine, logistic regression, K-nearest neighbors, K-means, tree-based methods, etc. The algorithms are grounded in statistics and probability theory and provide good performance for small datasets with hand-crafted features. However, the dependence of hand-crafted features on a priori knowledge limits its application to experts with domain knowledge in the food category recognition task. This scenario also increases the specificity of a feature extraction and classification pipeline, limiting its limits to the application and transfer to other domains. For example, a pipeline for the classification of apples may differ greatly from a pipeline for the grain quality measurement due to the difference between the task-specific features that may be included. A potential alternative to this approach is the deep learning approach, which uses neural networks for automated feature extraction.\vspace{1 cm}
+
+Online cooking recipe sites have become very popular, but they sometimes get confused when people want to cook by following these sites. This may cause to stop users from referring to these types of cooking sites throughout searching at grocery stores. Technology has to be improved to solve these problems, and then object recognition technology was introduced to the world. There has been significant progress in object recognition technology. Object recognition is a technology that identifies the objects shown in an image based on their specific properties [1]. So, Object recognition is a process that finds things in the real world from analyzing an image. To use object recognition, computer vision, and deep learning models, open-source software libraries such as the Open Computer Vision Library (OpenCV) [2], TensorFlow [3], NumPy [4], and Keras [5] have been used widely. With these libraries, we can implement object recognition schemes on PCs and mobile devices such as iPhones and Android smartphones. With the recent progress of mobile devices and their explosive spread, we have now been able to recognize objects at any time on a mobile device. OpenCV [2] can be used in image processing and representation. Deep learning APIs like NumPy can do the numerical computation, making machine learning faster and easier. TensorFlow[3] API can be used to recognize the image and train deep learning architectures for image classification [4]. There are pre-trained deep learning architectures such as MobileNet [6], ResNet [7], and Inception [8], VGG16 [9] can be used too. The advantage of using pre-trained architecture is that we can modify it using transfer learning [10]. With the help of these libraries, APIs, and architectures, we can easily recognize objects from an image [2].\vspace{1 cm}
+
+
+Deep    learning,    particularly    convolutional    neural networks  (CNNs),  has  revolutionized  the  field  of  image recognition by automatically learning hierarchical  features from raw image data.[4]Unlike traditional methods, CNNs eliminate  the  need  for  manual feature  extraction, allowing models to  adapt  dynamically  to  complex  datasets.  They have   shown   exceptional   performance   across   various domains, including  medical  imaging, autonomous driving, and facial recognition.[5]This success has spurred interest in   applying   deep   learning   techniques   to   food   image classification, where their ability to handle large-scale data and   capture   intricate   visual   patterns   offers   significant advantages.The  primary  objective  of  this  research  is  to explore   the   capabilities   of   CNNs   in   addressing   the challenges    of    automated    food    image    classification. Specifically,   this   study   proposes   an   optimized   CNN architecture  tailored  to  the  unique  requirements  of  food classification     tasks.     Using state-of-the-art techniques such as data augmentation, dropout, and batch normalization, the proposed model aims to enhance classification accuracy while mitigating common issues such as overfitting. [3] \vspace{1 cm}
+
+Despite advancements in deep learning, food recognition remains a challenging task due to several factors. Food items often exhibit high intra-class variability (e.g., different shapes of apples) and inter-class similarity (e.g., different types of pasta) [11]. Additionally, variations in lighting conditions, occlusions, and background clutter further complicate accurate recognition [12]. Traditional CNNs trained on general object datasets (e.g., ImageNet) may not perform optimally on food-specific tasks due to these unique challenges. To address this, domain-specific datasets such as Food-101 [13] and ETHZ Food-101 [14] have been developed to improve model generalization in food recognition tasks.\vspace{1 cm}
+
+Transfer learning has emerged as a powerful technique in food image classification, allowing pre-trained models (e.g., ResNet, MobileNet, and EfficientNet) to be fine-tuned on food-specific datasets [15]. This approach reduces training time and computational costs while improving accuracy, especially when labeled food datasets are limited [16]. Studies have shown that fine-tuned CNNs outperform traditional machine learning methods in food recognition tasks, achieving state-of-the-art results on benchmark datasets [17]. Furthermore, ensemble methods combining multiple CNN architectures have been explored to enhance classification robustness [18].\vspace{1 cm}
+Beyond recipe recommendation, AI-powered food recognition has diverse applications, including dietary monitoring, food waste reduction, and smart kitchen appliances [19]. For instance, mobile apps like FoodAI and PlantNet leverage CNNs to help users track nutritional intake and identify edible plants [20]. Future research directions may include multi-modal learning (combining images with text or sensor data), few-shot learning for rare food items, and edge AI deployment on low-power devices [21]. These advancements could further democratize access to personalized cooking assistance and sustainable food practices.\vspace{1 cm}
+
+
+
+
+
+\end{document}
